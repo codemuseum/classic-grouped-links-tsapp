@@ -18,6 +18,8 @@
 .app-classic-grouped-links .group .remove a {cursor:pointer; display:block; width:20px; height:20px; color:transparent; background: transparent url(/images/delete-small.png) 0px 0px no-repeat;}
 .app-classic-grouped-links .group .remove a:hover {background-position:0px -60px; background-color: transparent;}
 
+.app-classic-grouped-links .link .remove {top: -5px; left: -5px; }
+
 .app-classic-grouped-links .group.draggable h2 input,
 .app-classic-grouped-links .group.draggable h2 label {margin-left:25px;}
 

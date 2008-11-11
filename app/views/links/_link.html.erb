@@ -1,6 +1,6 @@
 <div class="link">
   <a href="<%=h link.link %>" class="link-link">
-    <div class="img"><%=image_tag screenshot_url(link.link) unless link.link.blank? %></div>
+    <div class="img"><%=image_tag screenshot_url(link.link, @page_object.page_url) unless link.link.blank? %></div>
     <div class="name"><%=h link.name %></div>
     <div class="description"><%=h link.description %></div>
     <div class="details"><%=h chop_protocol(link.link) %></div>

@@ -4,7 +4,7 @@
 <div class="link draggable">
   <div class="remove"><a title="Permanently remove this link.">Delete Link</a></div>
   <div class="link-link">
-    <div class="img"><%=image_tag screenshot_url(link.link) unless link.link.blank? %></div>
+    <div class="img"><%=image_tag screenshot_url(link.link, @page_object.page_url) unless link.link.blank? %></div>
     <div class="name">
       <%= lf.label :name, 'Link Title' %>
       <%= lf.text_field :name, :index => nil %>
