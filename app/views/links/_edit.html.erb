@@ -1,0 +1,25 @@
+<%# Takes f and link %>
+
+<% fields_for "#{f.object_name}[_GROUPINDEX_][assigned_links][]", link do |lf| -%>
+<div class="link draggable">
+  <div class="remove"><a title="Permanently remove this link.">Delete Link</a></div>
+  <div class="link-link">
+    <div class="img"><%=image_tag screenshot_url(link.link) unless link.link.blank? %></div>
+    <div class="name">
+      <%= lf.label :name, 'Link Title' %>
+      <%= lf.text_field :name, :index => nil %>
+    </div>
+    <div class="description">
+      <%= lf.label :description %>
+      <%= lf.text_field :description, :index => nil %>
+    </div>
+    <div class="details">
+      <%= lf.label :link %>
+      <%= page_url_fields(lf, true) %> <%= page_change_link %>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+  </div>  
+  <%= lf.hidden_field :id, :index => nil unless link.new_record? %>
+  <%= lf.hidden_field :position, :class => 'position-value', :index => nil %>
+</div>
+<% end %>

@@ -1,0 +1,39 @@
+<% stylesheets 'classic-grouped-links', 'classic-grouped-links-edit' -%>
+<% javascripts 'prototype', 'effects', 'dragdrop', 'classic-grouped-links-edit' -%>
+
+
+<% fields_for_page_object do |f| %>
+<h1>
+  <%= f.label :header %>
+  <%= f.text_field :header %>
+</h1>
+
+<div class="functions">
+  <a class='button new-group'>Add Group</a>
+  &nbsp; -or-
+  <a class='button new-link'>Add Link</a>
+</div>
+
+
+<div class="groups" id="classic_grouped_links_<%= f.object.id %>">
+  <% @page_object.groups.each do |group| %>
+    <%= render :partial  => 'groups/edit', :locals => { :f => f, :group => group } %>
+  <% end %>
+</div>
+  
+<div class="functions">
+  <a class='button new-group'>Add Group</a>
+  &nbsp; -or-
+  <a class='button new-link'>Add Link</a>
+</div>
+
+<% fields_for "#{f.object_name}[assigned_groups]", Group.new do |gf| -%>
+<div class="new-link-code" style="display:none">
+  <%= render :partial => 'links/edit', :locals => {:f => gf, :link => Link.new, :form_index => 'gf_INDEX_' } %>
+</div>
+<% end %>
+
+<div class="new-group-code" style="display:none">
+  <%= render :partial => 'groups/edit', :locals => {:f => f, :group => Group.new } %>
+</div>
+<% end %>

@@ -1,0 +1,8 @@
+<% stylesheets 'classic-grouped-links' -%>
+<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+
+<h1><%=h @page_object.header %></h1>
+
+<div class="groups">
+  <%= render :partial => @page_object.groups %>
+</div>

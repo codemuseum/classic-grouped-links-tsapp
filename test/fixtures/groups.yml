@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  page_object: 
+  position: 1
+  name: MyString
+
+two:
+  page_object: 
+  position: 1
+  name: MyString

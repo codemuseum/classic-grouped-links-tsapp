@@ -1,0 +1,19 @@
+<%# Takes f and group %>
+<% index = group.new_record? ? "gf_INDEX_" : group.id %>
+<div class="group draggable" id="classic_grouped_links_group_<%=h index %>">
+  <% fields_for "#{f.object_name}[assigned_groups]", group do |gf| -%>
+    <h2 class="ghandle">
+      <div class="remove"><a title="Permanently remove this group.">Delete Group</a></div>
+      
+      <%= gf.label :name, 'Group Name' %>
+      <%= gf.text_field :name, :index => index %>
+      <%= gf.hidden_field :id, :index => index unless group.new_record? %>
+      <%= gf.hidden_field :position, :class => 'position-value', :index => index %>
+    </h2>
+
+  <% group.links.each do |link| %>
+    <%= render :partial => 'links/edit', :locals => { :link => link, :f => gf, :form_index => index } %>
+  <% end %>
+  
+  <% end %>
+</div>

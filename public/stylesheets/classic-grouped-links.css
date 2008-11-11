@@ -1,0 +1,23 @@
+.app-classic-grouped-links h1 {text-align:center; margin:0; padding:0; padding-bottom:8px;}
+.app-classic-grouped-links .group { padding-bottom: 20px; }
+.app-classic-grouped-links .group h2 { margin-left: 120px; margin-bottom: 1em; }
+
+.app-classic-grouped-links .link { position: relative; }
+.app-classic-grouped-links .link { width: 482px; margin-right: auto; margin-left: auto; }
+
+.app-classic-grouped-links .link a.link-link { display: block; text-decoration: none; padding: 10px 12px 16px 10px; margin-bottom: 20px;}
+.app-classic-grouped-links .link a.link-link .img { float: left; text-align: center; width: 100px; }
+.app-classic-grouped-links .link a.link-link .img img { width: 100px; border:0px; }
+.app-classic-grouped-links .link a.link-link .name,
+.app-classic-grouped-links .link a.link-link .description,
+.app-classic-grouped-links .link a.link-link .details { margin-left: 112px; }
+.app-classic-grouped-links .link a.link-link .name { margin-top: 5px; text-decoration: underline; font-size: 130%; }
+
+.app-classic-grouped-links .clearfix {clear: both;visibility: hidden;font-size: 1px;line-height: 1px;}
+
+
+/* fixes problems with ie HasLayout - record-link elements were peek-a-booing */
+*:first-child+html .app-classic-grouped-links .links,
+*:first-child+html .app-classic-grouped-links .link a { zoom: 1; }
+* html .app-classic-grouped-links .links,
+* html .app-classic-grouped-links .link a { zoom: 1; }
