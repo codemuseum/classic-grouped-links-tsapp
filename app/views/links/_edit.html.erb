@@ -15,7 +15,7 @@
     </div>
     <div class="details">
       <%= lf.label :link %>
-      <%= page_url_fields(lf, true) %> <%= page_change_link %>
+      <%= asset_url_text_field(lf, [:pages], true) %> <%= asset_change_link(lf, [:pages], "...") %>
     </div>
     <div class="clearfix">&nbsp;</div>
   </div>  
